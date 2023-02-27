@@ -1,0 +1,184 @@
+$primary-color: #204379;
+$secondary-color: #b57556;
+
+@mixin text-style {
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#app {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.background {
+  background-color: $primary-color;
+  padding-bottom: 44px;
+
+  .topic {
+    @include text-style;
+    margin: 0;
+
+    color: white;
+
+    .first {
+      font-size: 32px;
+      padding-top: 60px;
+    }
+
+    .second {
+      font-size: 28px;
+      margin-top: 4px;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.button {
+  @include text-style;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: white;
+
+  box-shadow: 0px 0px 20px rgba(250, 163, 163, 0.91);
+  width: 200px;
+  height: 57px;
+  background-color: $secondary-color;
+  border-radius: 50px;
+  font-size: 18px;
+  line-height: 3;
+  letter-spacing: 0.4em;
+}
+
+.submit {
+  margin: auto;
+
+  box-shadow: 0px 4px 10px rgba(40, 35, 35, 0.35),
+    0px -4px 10px rgba(255, 255, 255, 0.9);
+}
+
+.paragraph-block {
+  background-color: #d4e4f1;
+  border: 2px solid $secondary-color;
+  border-radius: 20px;
+  margin: 32px auto 44px auto;
+  width: 366px;
+  color: $primary-color;
+}
+
+.paragraph {
+  margin: 32.5px 3px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 180%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  background-color: #e2d9d3;
+
+  #form {
+    @include text-style;
+    font-size: 18px;
+
+    padding: 10px 20px;
+    margin: auto;
+
+    width: 83px;
+    height: 23px;
+
+    color: $secondary-color;
+    background-color: white;
+    border: 2px solid $secondary-color;
+    box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
+    border-radius: 50px;
+  }
+
+  .form-list {
+    padding: 40px 20px;
+    margin: auto;
+
+    width: 366px;
+    height: 575px;
+
+    color: $primary-color;
+    background-color: white;
+    border: 2px solid $secondary-color;
+    box-shadow: 0px 1px 20px rgba(73, 72, 72, 0.25);
+    border-radius: 16px;
+
+    .asterisk {
+      display: inline;
+
+      color: $secondary-color;
+    }
+  }
+
+  .form-input {
+    width: 326px;
+    height: 57px;
+
+    background-color: white;
+    border: 1px solid $primary-color;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .motto {
+    text-align: center;
+    color: $primary-color;
+
+    .number {
+      color: $secondary-color;
+    }
+  }
+  .lighthouse {
+    margin-bottom: 40px;
+  }
+}
+
+.shop {
+  background-color: $primary-color;
+  padding-bottom: 40px;
+
+  border-radius: 50px 50px 0px 0px;
+
+  .topic {
+    @include text-style;
+    margin: 0;
+
+    color: white;
+
+    .bottom {
+      font-size: 20px;
+      line-height: 200%;
+      padding-top: 40px;
+      padding-bottom: 24px;
+      margin: 0;
+    }
+  }
+}
