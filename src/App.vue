@@ -48,69 +48,72 @@
     <img src="../src/assets/icon/waves.svg" />
   </section>
   <section class="content">
-    <h1 id="form">FORM</h1>
-    <form action="">
-      <div class="form-list">
-        <div>
-          <label for="store">store </label>
-          <div class="asterisk">*</div>
-          <input
-            type="text"
-            name="store"
-            id="store"
-            class="form-input"
-            placeholder="placeholder text"
-            required
-          />
+    <div class="form">
+      <h1 id="form">FORM</h1>
+      <form action="">
+        <div class="form-list">
+          <div>
+            <label for="store">store </label>
+            <div class="asterisk">*</div>
+            <input
+              type="text"
+              name="store"
+              id="store"
+              class="form-input"
+              placeholder="placeholder text"
+              required
+            />
+          </div>
+          <div>
+            <label for="name">name </label>
+            <div class="asterisk">*</div>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-input"
+              placeholder="placeholder text"
+              required
+            />
+          </div>
+          <div>
+            <label for="phone">phone </label>
+            <div class="asterisk">*</div>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              class="form-input"
+              placeholder="placeholder text"
+              required
+            />
+          </div>
+          <div>
+            <label for="consumption">Amount of consumption </label>
+            <div class="asterisk">*</div>
+            <input
+              type="number"
+              name="consumption"
+              id="consumption"
+              class="form-input"
+              placeholder="placeholder text"
+              required
+            />
+          </div>
+          <div>
+            <label for="payment">payment </label>
+            <div class="asterisk">*</div>
+            <select name="payment" id="payment" class="form-input" required>
+              <option value="digital payment">digital payment</option>
+              <option value="atm">ATM</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label for="name">name </label>
-          <div class="asterisk">*</div>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            class="form-input"
-            placeholder="placeholder text"
-            required
-          />
-        </div>
-        <div>
-          <label for="phone">phone </label>
-          <div class="asterisk">*</div>
-          <input
-            type="number"
-            name="phone"
-            id="phone"
-            class="form-input"
-            placeholder="placeholder text"
-            required
-          />
-        </div>
-        <div>
-          <label for="consumption">Amount of consumption </label>
-          <div class="asterisk">*</div>
-          <input
-            type="number"
-            name="consumption"
-            id="consumption"
-            class="form-input"
-            placeholder="placeholder text"
-            required
-          />
-        </div>
-        <div>
-          <label for="payment">payment </label>
-          <div class="asterisk">*</div>
-          <select name="payment" id="payment" class="form-input" required>
-            <option value="digital payment">digital payment</option>
-            <option value="atm">ATM</option>
-          </select>
-        </div>
-      </div>
 
-      <a role="button" href="#" class="button submit">submit</a>
-    </form>
+        <a role="button" href="#" class="button submit">submit</a>
+      </form>
+    </div>
+
     <div class="cards">
       <div class="card first-prize">
         A
