@@ -8,6 +8,24 @@ $secondary-color: #b57556;
   text-align: center;
 }
 
+@mixin desktop {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 414px) {
+    @content;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -30,7 +48,7 @@ a {
 
 .background {
   background-color: $primary-color;
-  padding-bottom: 44px;
+  padding-bottom: 1px;
 
   .topic {
     @include text-style;
@@ -51,6 +69,12 @@ a {
   }
 }
 
+.waves {
+  display: flex;
+  margin-bottom: -1px;
+  overflow: hidden;
+}
+
 .button {
   @include text-style;
   border: 0;
@@ -69,8 +93,7 @@ a {
 }
 
 .submit {
-  margin: auto;
-
+  margin: 40px auto;
   box-shadow: 0px 4px 10px rgba(40, 35, 35, 0.35),
     0px -4px 10px rgba(255, 255, 255, 0.9);
 }
@@ -79,27 +102,35 @@ a {
   background-color: #d4e4f1;
   border: 2px solid $secondary-color;
   border-radius: 20px;
-  margin: 32px auto 44px auto;
-  width: 366px;
+  margin: 32px 24px 44px 24px;
   color: $primary-color;
-}
+  @include desktop {
+    margin: 32px 296px 44px 296px;
+  }
 
-.paragraph {
-  margin: 32.5px 3px;
-}
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.text {
-  font-size: 16px;
-  line-height: 180%;
-}
+    height: 40px;
+  }
 
-.container {
-  display: flex;
-  justify-content: center;
+  .text {
+    font-size: 16px;
+    line-height: 180%;
+  }
+
+  .paragraph {
+    margin: 32.5px auto;
+  }
 }
 
 .content {
   background-color: #e2d9d3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   #form {
     @include text-style;
@@ -117,13 +148,12 @@ a {
     box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
     border-radius: 50px;
   }
-
   .form-list {
     padding: 40px 20px;
     margin: auto;
 
-    width: 366px;
-    height: 575px;
+    width: 326px;
+    height: 495px;
 
     color: $primary-color;
     background-color: white;
@@ -137,7 +167,6 @@ a {
       color: $secondary-color;
     }
   }
-
   .form-input {
     width: 326px;
     height: 57px;
@@ -146,6 +175,38 @@ a {
     border: 1px solid $primary-color;
     border-radius: 20px;
     margin-bottom: 20px;
+  }
+
+  .cards {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-flow: row wrap;
+    margin: 58px auto 40px auto;
+
+    .card {
+      width: 178px;
+      height: 112px;
+      margin: 16px 41px;
+
+      background-color: white;
+      box-shadow: 0px 8px 0px #edeef0;
+      border-radius: 20px;
+    }
+
+    .first-prize {
+      color: #b3b960;
+    }
+
+    .normal-prize {
+      color: #a0bcc8;
+    }
+
+    .prize {
+      font-size: 18px;
+      font-weight: 700;
+    }
   }
 
   .motto {
@@ -164,6 +225,7 @@ a {
 .shop {
   background-color: $primary-color;
   padding-bottom: 40px;
+  width: 100%;
 
   border-radius: 50px 50px 0px 0px;
 

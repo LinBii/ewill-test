@@ -8,20 +8,20 @@
       <a role="button" href="#form" class="button">FORM</a>
     </div>
     <div class="paragraph-block">
-      <div>
+      <div class="paragraph">
         <div class="container">
           <img src="../src/assets/icon/cactus.svg" />
-          <h2 class="paragraph">paragraph</h2>
+          <h2>paragraph</h2>
           <img src="../src/assets/icon/cactus.svg" />
         </div>
         <ol class="text">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
         </ol>
       </div>
-      <div>
+      <div class="paragraph">
         <div class="container">
           <img src="../src/assets/icon/cactus.svg" />
-          <h2 class="paragraph">paragraph</h2>
+          <h2>paragraph</h2>
           <img src="../src/assets/icon/cactus.svg" />
         </div>
         <ol class="text">
@@ -43,8 +43,9 @@
       </div>
     </div>
   </section>
-  <section>
-    <div class="wave">Wave</div>
+  <section class="waves">
+    <img src="../src/assets/icon/waves.svg" />
+    <img src="../src/assets/icon/waves.svg" />
   </section>
   <section class="content">
     <h1 id="form">FORM</h1>
@@ -108,17 +109,49 @@
         </div>
       </div>
 
-      <button class="button submit">submit</button>
+      <a role="button" href="#" class="button submit">submit</a>
     </form>
     <div class="cards">
-      <div class="card">A</div>
-      <div class="card">B</div>
-      <div class="card">C</div>
-      <div class="card">D</div>
-      <div class="card">E</div>
-      <div class="card">F</div>
-      <div class="card">G</div>
-      <div class="card">H</div>
+      <div class="card first-prize">
+        A
+        <div class="quantity">ONE</div>
+        <div class="prize">dehumidifier</div>
+      </div>
+      <div class="card first-prize">
+        B
+        <div class="quantity">ONE</div>
+        <div class="prize">range hood</div>
+      </div>
+      <div class="card first-prize">
+        C
+        <div class="quantity">ONE</div>
+        <div class="prize">vacuum cleaner</div>
+      </div>
+      <div class="card normal-prize">
+        D
+        <div class="quantity">ONE</div>
+        <div class="prize">toaster</div>
+      </div>
+      <div class="card normal-prize">
+        E
+        <div class="quantity">ONE</div>
+        <div class="prize">scale</div>
+      </div>
+      <div class="card normal-prize">
+        F
+        <div class="quantity">ONE</div>
+        <div class="prize">straightening iron</div>
+      </div>
+      <div class="card normal-prize">
+        G
+        <div class="quantity">FIVE</div>
+        <div class="prize">vacuum cleaner</div>
+      </div>
+      <div class="card normal-prize">
+        H
+        <div class="quantity">TEN</div>
+        <div class="prize">rice cooker</div>
+      </div>
     </div>
     <div class="content motto">
       <h1 class="content motto number">13.32</h1>
