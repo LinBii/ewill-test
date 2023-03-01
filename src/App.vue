@@ -117,42 +117,50 @@
 
     <div class="cards">
       <div class="card first-prize">
-        A
+        <div class="prize-name">A</div>
+        <img src="../src/assets/icon/certificateA.svg" class="certificateA" />
         <div class="quantity">ONE</div>
         <div class="prize">dehumidifier</div>
       </div>
       <div class="card first-prize">
-        B
+        <div class="prize-name">B</div>
+        <img src="../src/assets/icon/certificateA.svg" class="certificateA" />
         <div class="quantity">ONE</div>
         <div class="prize">range hood</div>
       </div>
       <div class="card first-prize">
-        C
+        <div class="prize-name">C</div>
+        <img src="../src/assets/icon/certificateA.svg" class="certificateA" />
         <div class="quantity">ONE</div>
         <div class="prize">vacuum cleaner</div>
       </div>
       <div class="card normal-prize">
-        D
+        <div class="prize-name">D</div>
+        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
         <div class="quantity">ONE</div>
         <div class="prize">toaster</div>
       </div>
       <div class="card normal-prize">
-        E
+        <div class="prize-name">E</div>
+        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
         <div class="quantity">ONE</div>
         <div class="prize">scale</div>
       </div>
       <div class="card normal-prize">
-        F
+        <div class="prize-name">F</div>
+        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
         <div class="quantity">ONE</div>
         <div class="prize">straightening iron</div>
       </div>
       <div class="card normal-prize">
-        G
+        <div class="prize-name">G</div>
+        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
         <div class="quantity">FIVE</div>
         <div class="prize">vacuum cleaner</div>
       </div>
       <div class="card normal-prize">
-        H
+        <div class="prize-name">H</div>
+        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
         <div class="quantity">TEN</div>
         <div class="prize">rice cooker</div>
       </div>
