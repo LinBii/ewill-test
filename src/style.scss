@@ -15,13 +15,7 @@ $secondary-color: #b57556;
 }
 
 @mixin pad {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media (max-width: 414px) {
+  @media (min-width: 768px) {
     @content;
   }
 }
@@ -88,6 +82,9 @@ select {
   background-color: $primary-color;
   padding-bottom: 1px;
 
+  background-image: url('/src/assets/icon/whitewaves.svg');
+  background-size: cover;
+
   .topic {
     @include text-style;
     margin: 0;
@@ -146,6 +143,79 @@ select {
     align-items: center;
 
     height: 40px;
+  }
+
+  .sup-oar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .uppersup {
+      position: absolute;
+      width: 80px;
+      height: 64px;
+      right: 10px;
+      top: 240px;
+      @include pad {
+        right: 60px;
+      }
+      @include desktop {
+        right: 320px;
+      }
+    }
+
+    .oar {
+      position: absolute;
+      width: 62px;
+      height: 45.75px;
+      right: 10px;
+      top: 250px;
+      @include pad {
+        right: 60px;
+      }
+      @include desktop {
+        right: 320px;
+      }
+    }
+  }
+
+  .sup-firework {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .lowersup {
+      position: absolute;
+      left: 14px;
+      bottom: -44px;
+      z-index: 0;
+      @include pad {
+        left: 44px;
+        bottom: -50px;
+      }
+      @include desktop {
+        left: 44px;
+        bottom: -50px;
+      }
+    }
+
+    .firework {
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      left: -15px;
+      bottom: -44px;
+      z-index: 1;
+      @include pad {
+        left: 15px;
+        bottom: -54px;
+      }
+      @include pad {
+        left: 15px;
+        bottom: -54px;
+      }
+    }
   }
 
   .text {
@@ -232,7 +302,7 @@ select {
     margin: 18px 0 40px 0;
 
     background-image: url('/src/assets/icon/sand.svg');
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 
     .sand {

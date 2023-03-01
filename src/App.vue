@@ -8,6 +8,10 @@
       <a role="button" href="#form" class="button">FORM</a>
     </div>
     <div class="paragraph-block">
+      <div class="sup-oar">
+        <img src="../src/assets/icon/uppersup.svg" class="uppersup" />
+        <img src="../src/assets/icon/oar.svg" class="oar" />
+      </div>
       <div class="paragraph">
         <div class="container">
           <img src="../src/assets/icon/cactus.svg" />
@@ -40,6 +44,10 @@
             <strong>vitae leo venenatis ullamcorper.</strong>
           </li>
         </ol>
+      </div>
+      <div class="sup-firework">
+        <img src="../src/assets/icon/firework.svg" class="firework" />
+        <img src="../src/assets/icon/lowersup.svg" class="lowersup" />
       </div>
     </div>
   </section>
