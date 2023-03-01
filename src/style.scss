@@ -69,7 +69,12 @@ select {
   appearance: none;
 
   background: url('/src/assets/icon/dropdown.svg') no-repeat;
-  background-position: right;
+  background-position: 97% 50%;
+}
+
+label {
+  display: inline-block;
+  height: 22px;
 }
 
 #app {
@@ -83,7 +88,20 @@ select {
   padding-bottom: 1px;
 
   background-image: url('/src/assets/icon/whitewaves.svg');
-  background-size: cover;
+  background-size: 100%;
+  background-position: 50% 60%;
+
+  @include pad {
+    background-image: url('/src/assets/icon/whitewaves768.svg');
+    background-size: 100%;
+    background-position: 50% -30%;
+  }
+
+  @include desktop() {
+    background-image: url('/src/assets/icon/whitewaves1400.svg');
+    background-size: 100%;
+    background-position: 50% 10%;
+  }
 
   .topic {
     @include text-style;
@@ -225,6 +243,10 @@ select {
 
   .paragraph {
     margin: 32.5px auto;
+
+    .cactus {
+      margin: 3px;
+    }
   }
 }
 
@@ -233,16 +255,19 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   #form {
     @include text-style;
     font-size: 18px;
+    letter-spacing: 0.4em;
+    text-indent: 0.2em;
 
     padding: 10px 20px;
     margin: auto;
 
-    width: 83px;
-    height: 23px;
+    width: 79px;
+    height: 19px;
     position: relative;
     top: 19px;
     right: 20px;
@@ -253,12 +278,19 @@ select {
     box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
     border-radius: 50px;
   }
+  .turtle {
+    position: absolute;
+    width: 64px;
+    height: 62px;
+    right: -44px;
+    top: -10px;
+  }
   .form-list {
     padding: 40px 20px;
-    margin: auto;
+    margin: 0 24px;
 
-    width: 326px;
-    height: 495px;
+    max-width: 366px;
+    height: 491px;
 
     color: $primary-color;
     background-color: white;
@@ -266,120 +298,161 @@ select {
     box-shadow: 0px 1px 20px rgba(73, 72, 72, 0.25);
     border-radius: 16px;
 
+    @include pad {
+      max-width: 676px;
+    }
+
+    @include desktop {
+      max-width: 764px;
+
+      margin: 0 296px;
+    }
+
     .asterisk {
-      display: inline;
+      display: inline-block;
+      margin-left: 4px;
+      height: 22px;
 
       color: $secondary-color;
     }
   }
   .form-input {
     width: 310px;
-    height: 57px;
+    height: 55px;
 
     color: black;
     background-color: white;
     border: 1px solid $primary-color;
     border-radius: 20px;
-    margin-top: 4px;
-    margin-bottom: 20px;
+    margin: 2px 20px 20px 0;
+
+    @include pad {
+      width: 662px;
+    }
+
+    @include desktop {
+      width: 750px;
+    }
   }
   #payment {
     width: 326px;
+    height: 57px;
+
+    @include pad {
+      width: 680px;
+    }
+
+    @include desktop {
+      width: 768px;
+    }
   }
 
   .submit {
-    margin: 40px 100px;
+    margin: 40px 26%;
     box-shadow: 0px 4px 10px rgba(40, 35, 35, 0.35),
       0px -4px 10px rgba(255, 255, 255, 0.9);
+
+    @include pad {
+      margin: 40px 37%;
+    }
+
+    @include desktop {
+      margin: 40px 43%;
+    }
   }
 
-  .cards {
-    text-align: center;
-    display: flex;
-    align-content: flex-start;
-    flex-flow: row wrap;
-    width: 414px;
-    margin: 18px 0 40px 0;
+  .sand {
+    width: 100%;
+
+    padding-top: 40px;
+    margin-bottom: 40px;
 
     background-image: url('/src/assets/icon/sand.svg');
-    background-size: cover;
     background-position: center;
 
-    .sand {
-      position: relative;
-      width: 100%;
-      z-index: 0;
-    }
+    .cards {
+      text-align: center;
+      display: flex;
+      align-content: flex-start;
+      flex-flow: row wrap;
+      width: 414px;
+      margin: 18px auto 0 auto;
 
-    .card {
-      position: relative;
-      width: 178px;
-      height: 112px;
-      margin: 0 0 41px 16px;
-
-      background-color: white;
-      box-shadow: 0px 8px 0px #edeef0;
-      border-radius: 20px;
-
-      .prize-name {
-        position: absolute;
-        width: 11px;
-        height: 21px;
-        left: 83px;
-        top: -5px;
-
-        color: white;
-        z-index: 1;
+      @include pad {
+        width: 598px;
+        margin: 18px auto 0 auto;
       }
 
-      .certificateA,
-      .certificateD {
-        position: absolute;
-        left: 31.46%;
-        right: 31.83%;
-        top: -25%;
-        bottom: 46.21%;
-        z-index: 0;
+      .card {
+        position: relative;
+        width: 178px;
+        height: 112px;
+        margin: 0 0 41px 16px;
+
+        background-color: white;
+        box-shadow: 0px 8px 0px #edeef0;
+        border-radius: 20px;
+
+        .prize-name {
+          position: absolute;
+          width: 11px;
+          height: 21px;
+          left: 83px;
+          top: -5px;
+
+          color: white;
+          z-index: 1;
+        }
+
+        .certificateA,
+        .certificateD {
+          position: absolute;
+          left: 31.46%;
+          right: 31.83%;
+          top: -25%;
+          bottom: 46.21%;
+          z-index: 0;
+        }
+
+        .quantity {
+          padding: 3px 10px;
+
+          position: absolute;
+          width: 25px;
+          height: 17px;
+          left: 125px;
+          top: 18px;
+
+          font-size: 12px;
+          line-height: 140%;
+
+          background: #fafafa;
+          border: 1px solid;
+          border-radius: 50px;
+        }
+        .prize {
+          position: absolute;
+          left: 0%;
+          right: 0%;
+          top: 53.7%;
+          bottom: 5.56%;
+
+          line-height: 125%;
+        }
       }
 
-      .quantity {
-        padding: 3px 10px;
-
-        position: absolute;
-        width: 25px;
-        height: 17px;
-        left: 125px;
-        top: 18px;
-
-        font-size: 12px;
-        line-height: 140%;
-
-        background: #fafafa;
-        border: 1px solid;
-        border-radius: 50px;
+      .first-prize {
+        color: #b3b960;
       }
+
+      .normal-prize {
+        color: #a0bcc8;
+      }
+
       .prize {
-        position: absolute;
-        left: 0%;
-        right: 0%;
-        top: 53.7%;
-        bottom: 5.56%;
-
-        line-height: 125%;
+        font-size: 18px;
+        font-weight: 700;
       }
-    }
-
-    .first-prize {
-      color: #b3b960;
-    }
-
-    .normal-prize {
-      color: #a0bcc8;
-    }
-
-    .prize {
-      font-size: 18px;
-      font-weight: 700;
     }
   }
 

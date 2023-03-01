@@ -14,9 +14,9 @@
       </div>
       <div class="paragraph">
         <div class="container">
-          <img src="../src/assets/icon/cactus.svg" />
+          <img src="../src/assets/icon/cactus.svg" class="cactus" />
           <h2>paragraph</h2>
-          <img src="../src/assets/icon/cactus.svg" />
+          <img src="../src/assets/icon/cactus.svg" class="cactus" />
         </div>
         <ol class="text">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
@@ -24,9 +24,9 @@
       </div>
       <div class="paragraph">
         <div class="container">
-          <img src="../src/assets/icon/cactus.svg" />
+          <img src="../src/assets/icon/cactus.svg" class="cactus" />
           <h2>paragraph</h2>
-          <img src="../src/assets/icon/cactus.svg" />
+          <img src="../src/assets/icon/cactus.svg" class="cactus" />
         </div>
         <ol class="text">
           <li>
@@ -57,11 +57,13 @@
   </section>
   <section class="content">
     <div class="form">
-      <h1 id="form">FORM</h1>
+      <h1 id="form">
+        FORM<img src="../src/assets/icon/turtle.svg" class="turtle" />
+      </h1>
       <form action="">
         <div class="form-list">
           <div>
-            <label for="store">store </label>
+            <label for="store">store</label>
             <div class="asterisk">*</div>
             <input
               type="text"
@@ -73,7 +75,7 @@
             />
           </div>
           <div>
-            <label for="name">name </label>
+            <label for="name">name</label>
             <div class="asterisk">*</div>
             <input
               type="text"
@@ -119,60 +121,65 @@
           </div>
         </div>
 
-        <a role="button" href="#form" class="button submit">submit</a>
+        <div class="container">
+          <a role="button" href="#form" class="button submit">submit</a>
+        </div>
       </form>
     </div>
 
-    <div class="cards">
-      <div class="card first-prize">
-        <div class="prize-name">A</div>
-        <img src="../src/assets/icon/certificateA.svg" class="certificateA" />
-        <div class="quantity">ONE</div>
-        <div class="prize">dehumidifier</div>
-      </div>
-      <div class="card first-prize">
-        <div class="prize-name">B</div>
-        <img src="../src/assets/icon/certificateA.svg" class="certificateA" />
-        <div class="quantity">ONE</div>
-        <div class="prize">range hood</div>
-      </div>
-      <div class="card first-prize">
-        <div class="prize-name">C</div>
-        <img src="../src/assets/icon/certificateA.svg" class="certificateA" />
-        <div class="quantity">ONE</div>
-        <div class="prize">vacuum cleaner</div>
-      </div>
-      <div class="card normal-prize">
-        <div class="prize-name">D</div>
-        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
-        <div class="quantity">ONE</div>
-        <div class="prize">toaster</div>
-      </div>
-      <div class="card normal-prize">
-        <div class="prize-name">E</div>
-        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
-        <div class="quantity">ONE</div>
-        <div class="prize">scale</div>
-      </div>
-      <div class="card normal-prize">
-        <div class="prize-name">F</div>
-        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
-        <div class="quantity">ONE</div>
-        <div class="prize">straightening iron</div>
-      </div>
-      <div class="card normal-prize">
-        <div class="prize-name">G</div>
-        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
-        <div class="quantity">FIVE</div>
-        <div class="prize">vacuum cleaner</div>
-      </div>
-      <div class="card normal-prize">
-        <div class="prize-name">H</div>
-        <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
-        <div class="quantity">TEN</div>
-        <div class="prize">rice cooker</div>
+    <div class="sand">
+      <div class="cards">
+        <div class="card first-prize">
+          <div class="prize-name">A</div>
+          <img src="../src/assets/icon/certificateA.svg" class="certificateA" />
+          <div class="quantity">ONE</div>
+          <div class="prize">dehumidifier</div>
+        </div>
+        <div class="card first-prize">
+          <div class="prize-name">B</div>
+          <img src="../src/assets/icon/certificateA.svg" class="certificateA" />
+          <div class="quantity">ONE</div>
+          <div class="prize">range hood</div>
+        </div>
+        <div class="card first-prize">
+          <div class="prize-name">C</div>
+          <img src="../src/assets/icon/certificateA.svg" class="certificateA" />
+          <div class="quantity">ONE</div>
+          <div class="prize">vacuum cleaner</div>
+        </div>
+        <div class="card normal-prize">
+          <div class="prize-name">D</div>
+          <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
+          <div class="quantity">ONE</div>
+          <div class="prize">toaster</div>
+        </div>
+        <div class="card normal-prize">
+          <div class="prize-name">E</div>
+          <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
+          <div class="quantity">ONE</div>
+          <div class="prize">scale</div>
+        </div>
+        <div class="card normal-prize">
+          <div class="prize-name">F</div>
+          <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
+          <div class="quantity">ONE</div>
+          <div class="prize">straightening iron</div>
+        </div>
+        <div class="card normal-prize">
+          <div class="prize-name">G</div>
+          <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
+          <div class="quantity">FIVE</div>
+          <div class="prize">vacuum cleaner</div>
+        </div>
+        <div class="card normal-prize">
+          <div class="prize-name">H</div>
+          <img src="../src/assets/icon/certificateD.svg" class="certificateD" />
+          <div class="quantity">TEN</div>
+          <div class="prize">rice cooker</div>
+        </div>
       </div>
     </div>
+
     <div class="motto">
       <div>
         <div class="vector-left"></div>
