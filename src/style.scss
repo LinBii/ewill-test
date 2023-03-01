@@ -386,12 +386,47 @@ select {
   .motto {
     text-align: center;
     color: $primary-color;
+    position: relative;
+    font-size: 20px;
+    line-height: 140%;
+    margin: 0;
+
+    .vector-left {
+      position: absolute;
+      width: 20px;
+      height: 75px;
+      left: -30px;
+      top: 0;
+
+      background: linear-gradient(
+        to top right,
+        #e2d9d3 calc(50% - 1px),
+        $primary-color,
+        #e2d9d3 calc(50% + 1px)
+      );
+    }
+
+    .vector-right {
+      position: absolute;
+      width: 20px;
+      height: 75px;
+      right: -30px;
+      top: 0;
+
+      background: linear-gradient(
+        to top left,
+        #e2d9d3 calc(50% - 1px),
+        $primary-color,
+        #e2d9d3 calc(50% + 1px)
+      );
+    }
 
     .number {
       color: $secondary-color;
     }
   }
   .lighthouse {
+    margin-top: 20px;
     margin-bottom: 40px;
   }
 }

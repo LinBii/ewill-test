@@ -173,10 +173,15 @@
         <div class="prize">rice cooker</div>
       </div>
     </div>
-    <div class="content motto">
-      <h1 class="content motto number">13.32</h1>
-      <h1>who seeks after it and</h1>
-      <h1>wants to have it</h1>
+    <div class="motto">
+      <div>
+        <div class="vector-left"></div>
+        <h1 class="content motto number">13.32</h1>
+        <h1 class="motto text">who seeks after it and</h1>
+        <h1 class="motto text">wants to have it</h1>
+        <div class="vector-right"></div>
+      </div>
+
       <img src="../src/assets/icon/lighthouse.svg" class="lighthouse" />
     </div>
     <div class="shop">
