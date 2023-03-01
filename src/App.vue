@@ -85,6 +85,7 @@
               id="phone"
               class="form-input"
               placeholder="placeholder text"
+              oninput="value=this.value.replace(/\D/g,'')"
               required
             />
           </div>
@@ -110,7 +111,7 @@
           </div>
         </div>
 
-        <a role="button" href="#" class="button submit">submit</a>
+        <a role="button" href="#form" class="button submit">submit</a>
       </form>
     </div>
 

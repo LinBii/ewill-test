@@ -48,6 +48,16 @@ input::placeholder {
   color: #bdbdbd;
 }
 
+input:focus {
+  border: 0;
+  outline: 3px solid #93bbf9;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  border: none;
+  outline: 3px solid #e06d6d;
+}
+
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -197,9 +207,11 @@ select {
     width: 310px;
     height: 57px;
 
+    color: black;
     background-color: white;
     border: 1px solid $primary-color;
     border-radius: 20px;
+    margin-top: 4px;
     margin-bottom: 20px;
   }
   #payment {
