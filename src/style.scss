@@ -22,10 +22,13 @@ $secondary-color: #b57556;
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {
