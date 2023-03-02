@@ -46,6 +46,7 @@ input:focus {
 }
 
 input:not(:focus):not(:placeholder-shown):invalid {
+  content: 'wrong format';
   border: none;
   outline: 3px solid #e06d6d;
 }
@@ -254,8 +255,9 @@ label {
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding-top: 32px;
 
-  #form {
+  .form {
     @include text-style;
     font-size: 18px;
     letter-spacing: 0.4em;
@@ -288,7 +290,6 @@ label {
     margin: 0 24px;
 
     max-width: 366px;
-    height: 491px;
 
     color: $primary-color;
     background-color: white;
@@ -306,33 +307,50 @@ label {
       margin: 0 296px;
     }
 
-    .asterisk {
-      display: inline-block;
-      margin-left: 4px;
-      height: 22px;
+    .form-control {
+      position: relative;
+      .asterisk {
+        display: inline-block;
+        margin-left: 4px;
+        height: 22px;
 
-      color: $secondary-color;
+        color: $secondary-color;
+      }
+      .form-input {
+        width: 310px;
+        height: 55px;
+
+        color: black;
+        background-color: white;
+        border: 1px solid $primary-color;
+        border-radius: 20px;
+        padding-left: 16px;
+        margin: 2px 20px 20px 0;
+
+        @include pad {
+          width: 662px;
+        }
+
+        @include desktop {
+          width: 750px;
+        }
+      }
+      .no-result {
+        color: #e06d6d;
+        font-size: 12px;
+        display: inline;
+        margin-left: 10px;
+      }
+      .missing-required {
+        color: #e06d6d;
+        font-size: 12px;
+
+        position: absolute;
+        top: 90px;
+      }
     }
   }
-  .form-input {
-    width: 310px;
-    height: 55px;
 
-    color: black;
-    background-color: white;
-    border: 1px solid $primary-color;
-    border-radius: 20px;
-    padding-left: 16px;
-    margin: 2px 20px 20px 0;
-
-    @include pad {
-      width: 662px;
-    }
-
-    @include desktop {
-      width: 750px;
-    }
-  }
   #store {
     background: url('/src/assets/icon/dropdown.svg') no-repeat;
     background-position: 97% 50%;
@@ -362,6 +380,11 @@ label {
     @include desktop {
       margin: 40px 43%;
     }
+  }
+
+  .submit:active {
+    background-color: #d3a995;
+    pointer-events: none;
   }
 
   .sand {
@@ -472,7 +495,7 @@ label {
       width: 20px;
       height: 75px;
       left: -30px;
-      top: 0;
+      top: 32px;
 
       background: linear-gradient(
         to top right,
@@ -487,7 +510,7 @@ label {
       width: 20px;
       height: 75px;
       right: -30px;
-      top: 0;
+      top: 32px;
 
       background: linear-gradient(
         to top left,

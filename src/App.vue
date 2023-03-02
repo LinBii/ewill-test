@@ -1,4 +1,38 @@
-<script setup></script>
+<script setup>
+import { ref, watch } from 'vue';
+
+const stores = ['store1', 'store2', 'store3', 'store4', 'store5'];
+const filteredStores = ref(stores);
+
+const form = ref('');
+const inputValue = ref('');
+
+const noResult = ref(false);
+const missingRequired = ref(false);
+const wrongFormat = ref(false);
+
+watch(inputValue, (value) => {
+  if (value.length === 0) {
+    filteredStores.value = stores;
+    noResult.value = false;
+    return;
+  }
+
+  const inputLower = value.toLowerCase();
+
+  filteredStores.value = stores.filter((option) =>
+    option.toLowerCase().includes(inputLower)
+  );
+
+  noResult.value = filteredStores.value.length === 0;
+});
+
+const submitForm = () => {
+  if (form.value.reportValidity()) {
+    console.log('Form submitted successfully!');
+  }
+};
+</script>
 
 <template>
   <section class="background">
@@ -56,15 +90,16 @@
     <img src="../src/assets/icon/waves.svg" />
   </section>
   <section class="content">
-    <div class="form">
-      <h1 id="form">
+    <div>
+      <h1 id="form" class="form">
         FORM<img src="../src/assets/icon/turtle.svg" class="turtle" />
       </h1>
-      <form action="">
+      <form @submit.prevent="submitForm" ref="form">
         <div class="form-list">
-          <div>
+          <div class="form-control">
             <label for="store">store</label>
             <div class="asterisk">*</div>
+            <div v-if="noResult" class="no-result">no result</div>
             <input
               type="text"
               name="store"
@@ -72,17 +107,22 @@
               class="form-input"
               placeholder="placeholder text"
               list="stores"
+              v-model="inputValue"
               required
             />
             <datalist id="stores">
-              <option value="store1"></option>
-              <option value="store2"></option>
-              <option value="store3"></option>
-              <option value="store4"></option>
-              <option value="store5"></option>
+              <option
+                v-for="store in filteredStores"
+                :value="store"
+                :key="store"
+              >
+                {{ store }}
+              </option>
             </datalist>
+            <div v-if="missingRequired" class="missing-required">required</div>
+            <div v-if="wrongFormat" class="missing-required">wrong format</div>
           </div>
-          <div>
+          <div class="form-control">
             <label for="name">name</label>
             <div class="asterisk">*</div>
             <!-- 允許中文、英文及注音輸入 -->
@@ -95,8 +135,10 @@
               oninput="value=this.value.replace(/[^\u0041-\u005A\u0061-\u007A\u4E00-\u9FFF\u3105-\u3129\u02CA\u02C7\u02CB\u02D9]/g,'')"
               required
             />
+            <div v-if="missingRequired" class="missing-required">required</div>
+            <div v-if="wrongFormat" class="missing-required">wrong format</div>
           </div>
-          <div>
+          <div class="form-control">
             <label for="phone">phone </label>
             <div class="asterisk">*</div>
             <input
@@ -110,8 +152,10 @@
               maxlength="10"
               required
             />
+            <div v-if="missingRequired" class="missing-required">required</div>
+            <div v-if="wrongFormat" class="missing-required">wrong format</div>
           </div>
-          <div>
+          <div class="form-control">
             <label for="consumption">Amount of consumption </label>
             <div class="asterisk">*</div>
             <input
@@ -124,19 +168,29 @@
               min="0"
               required
             />
+            <div v-if="missingRequired" class="missing-required">required</div>
+            <div v-if="wrongFormat" class="missing-required">wrong format</div>
           </div>
-          <div>
+          <div class="form-control">
             <label for="payment">payment </label>
             <div class="asterisk">*</div>
             <select name="payment" id="payment" class="form-input" required>
               <option value="digital payment">digital payment</option>
               <option value="atm">ATM</option>
             </select>
+            <div v-if="missingRequired" class="missing-required">required</div>
+            <div v-if="wrongFormat" class="missing-required">wrong format</div>
           </div>
         </div>
 
         <div class="container">
-          <a role="button" href="#form" class="button submit">submit</a>
+          <a
+            role="button"
+            href="#"
+            @click.prevent="submitForm"
+            class="button submit"
+            >submit</a
+          >
         </div>
       </form>
     </div>
