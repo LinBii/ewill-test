@@ -88,18 +88,18 @@ label {
 
   background-image: url('/src/assets/icon/whitewaves.svg');
   background-size: 100%;
-  background-position: 50% 60%;
+  background-position: 50% 50%;
 
   @include pad {
     background-image: url('/src/assets/icon/whitewaves768.svg');
     background-size: 100%;
-    background-position: 50% -30%;
+    background-position: 50% 76%;
   }
 
   @include desktop() {
     background-image: url('/src/assets/icon/whitewaves1400.svg');
     background-size: 100%;
-    background-position: 50% 10%;
+    background-position: 50% 65%;
   }
 
   .topic {
@@ -161,6 +161,40 @@ label {
     align-items: center;
 
     height: 40px;
+  }
+
+  .bubbles {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    .small-bubble {
+      position: absolute;
+      right: 5px;
+      bottom: 61px;
+
+      @include pad {
+        right: 55px;
+      }
+
+      @include desktop {
+        right: 35px;
+      }
+    }
+
+    .big-bubble {
+      position: absolute;
+      right: 13px;
+      bottom: 33px;
+
+      @include pad {
+        right: 73px;
+      }
+
+      @include desktop {
+        right: 55px;
+      }
+    }
   }
 
   .sup-oar {

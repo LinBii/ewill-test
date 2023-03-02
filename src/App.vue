@@ -163,6 +163,10 @@ const submitForm = () => {
       </div>
     </div>
     <div class="paragraph-block">
+      <div class="bubbles">
+        <img src="../src/assets/icon/bubble20px.svg" class="big-bubble" />
+        <img src="../src/assets/icon/bubble12px.svg" class="small-bubble" />
+      </div>
       <div class="sup-oar">
         <img src="../src/assets/icon/uppersup.svg" class="uppersup" />
         <img src="../src/assets/icon/oar.svg" class="oar" />
