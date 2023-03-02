@@ -36,8 +36,6 @@ a {
 
 input,
 input::placeholder {
-  padding: 0 0 0 16px;
-
   font-size: 16px;
   color: #bdbdbd;
 }
@@ -324,6 +322,7 @@ label {
     background-color: white;
     border: 1px solid $primary-color;
     border-radius: 20px;
+    padding-left: 16px;
     margin: 2px 20px 20px 0;
 
     @include pad {
