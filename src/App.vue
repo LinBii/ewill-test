@@ -229,7 +229,7 @@ const submitForm = () => {
               type="text"
               name="store"
               id="store"
-              class="form-input"
+              :class="storeError ? 'form-input invalid' : 'form-input'"
               placeholder="placeholder text"
               list="stores"
               v-model="store"
@@ -257,7 +257,7 @@ const submitForm = () => {
               name="name"
               id="name"
               v-model="name"
-              class="form-input"
+              :class="nameError ? 'form-input invalid' : 'form-input'"
               placeholder="placeholder text"
               oninput="value=this.value.replace(/[^\u0041-\u005A\u0061-\u007A\u4E00-\u9FFF\u3105-\u3129\u02CA\u02C7\u02CB\u02D9]/g,'')"
               required
@@ -274,7 +274,7 @@ const submitForm = () => {
               name="phone"
               id="phone"
               v-model="phone"
-              class="form-input"
+              :class="phoneError ? 'form-input invalid' : 'form-input'"
               placeholder="placeholder text"
               pattern="[0]{1}[9]{1}[0-9]{8}"
               oninput="value=this.value.replace(/\D/g,'')"
@@ -293,7 +293,7 @@ const submitForm = () => {
               name="consumption"
               id="consumption"
               v-model="consumption"
-              class="form-input"
+              :class="consumptionError ? 'form-input invalid' : 'form-input'"
               placeholder="placeholder text"
               oninput="value=this.value.replace(/\D/g,'')"
               min="0"
@@ -310,7 +310,7 @@ const submitForm = () => {
               name="payment"
               id="payment"
               v-model="payment"
-              class="form-input"
+              :class="paymentError ? 'form-input invalid' : 'form-input'"
               required
             >
               <option value="digital payment">digital payment</option>
