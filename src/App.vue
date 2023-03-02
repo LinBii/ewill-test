@@ -85,12 +85,14 @@
           <div>
             <label for="name">name</label>
             <div class="asterisk">*</div>
+            <!-- 允許中文、英文及注音輸入 -->
             <input
               type="text"
               name="name"
               id="name"
               class="form-input"
               placeholder="placeholder text"
+              oninput="value=this.value.replace(/[^\u0041-\u005A\u0061-\u007A\u4E00-\u9FFF\u3105-\u3129\u02CA\u02C7\u02CB\u02D9]/g,'')"
               required
             />
           </div>
@@ -103,7 +105,9 @@
               id="phone"
               class="form-input"
               placeholder="placeholder text"
+              pattern="[0]{1}[9]{1}[0-9]{8}"
               oninput="value=this.value.replace(/\D/g,'')"
+              maxlength="10"
               required
             />
           </div>
@@ -116,6 +120,8 @@
               id="consumption"
               class="form-input"
               placeholder="placeholder text"
+              oninput="value=this.value.replace(/\D/g,'')"
+              min="0"
               required
             />
           </div>
