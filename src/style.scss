@@ -142,6 +142,7 @@ label {
   font-size: 18px;
   line-height: 3;
   letter-spacing: 0.4em;
+  text-indent: 0.2em;
 }
 
 .paragraph-block {
@@ -341,7 +342,7 @@ label {
         display: inline;
         margin-left: 10px;
       }
-      .missing-required {
+      .error {
         color: #e06d6d;
         font-size: 12px;
 
@@ -369,6 +370,7 @@ label {
   }
 
   .submit {
+    letter-spacing: 0.2em;
     margin: 40px 26%;
     box-shadow: 0px 4px 10px rgba(40, 35, 35, 0.35),
       0px -4px 10px rgba(255, 255, 255, 0.9);
@@ -382,10 +384,34 @@ label {
     }
   }
 
-  .submit:active {
-    background-color: #d3a995;
-    pointer-events: none;
+  #success {
+    letter-spacing: 0.2em;
+    text-indent: 1em;
+    color: #e6ffb1;
+
+    .icon {
+      position: relative;
+      right: 10px;
+      top: 5px;
+    }
   }
+
+  #failure {
+    letter-spacing: 0.2em;
+    text-indent: 1em;
+    color: #ffe3e3;
+
+    .icon {
+      position: relative;
+      right: 10px;
+      top: 5px;
+    }
+  }
+
+  // .submit:active {
+  //   background-color: #d3a995;
+  //   pointer-events: none;
+  // }
 
   .sand {
     width: 100%;

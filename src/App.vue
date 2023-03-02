@@ -5,13 +5,28 @@ const stores = ['store1', 'store2', 'store3', 'store4', 'store5'];
 const filteredStores = ref(stores);
 
 const form = ref('');
-const inputValue = ref('');
+const store = ref('');
+const name = ref('');
+const phone = ref('');
+const consumption = ref('');
+const payment = ref('digital payment');
+const storeError = ref(false);
+const nameError = ref(false);
+const phoneError = ref(false);
+const consumptionError = ref(false);
+const paymentError = ref(false);
+const submitFailure = ref(false);
+const submitSuccess = ref(false);
+
+const storeErrorMessage = ref('');
+const nameErrorMessage = ref('');
+const phoneErrorMessage = ref('');
+const consumptionErrorMessage = ref('');
+const paymentErrorMessage = ref('');
 
 const noResult = ref(false);
-const missingRequired = ref(false);
-const wrongFormat = ref(false);
 
-watch(inputValue, (value) => {
+watch(store, (value) => {
   if (value.length === 0) {
     filteredStores.value = stores;
     noResult.value = false;
@@ -27,10 +42,114 @@ watch(inputValue, (value) => {
   noResult.value = filteredStores.value.length === 0;
 });
 
+const isValidStore = (storeValue) => {
+  return filteredStores.value.length === 1;
+};
+
+const isValidName = (nameValue) => {
+  const pattern =
+    /^[\u0041-\u005A\u0061-\u007A\u4E00-\u9FFF\u3105-\u3129\u02CA\u02C7\u02CB\u02D9]+$/;
+
+  console.log(pattern.test(nameValue));
+  return pattern.test(nameValue);
+};
+
+const isValidPhone = (phoneValue) => {
+  const pattern = /^09[0-9]{8}$/;
+  return pattern.test(phoneValue);
+};
+
+const isValidConsumption = (consumptionValue) => {
+  const minValue = 0;
+  const pattern = /^[0-9]+$/;
+  return pattern.test(consumptionValue) && consumptionValue >= minValue;
+};
+
 const submitForm = () => {
-  if (form.value.reportValidity()) {
-    console.log('Form submitted successfully!');
+  if (store.value.trim() === '') {
+    submitFailure.value = true;
+    storeError.value = true;
+    storeErrorMessage.value = 'required';
+  } else if (!isValidStore(store.value)) {
+    submitFailure.value = true;
+    storeError.value = true;
+    storeErrorMessage.value = 'wrong format';
+  } else {
+    storeError.value = false;
+    storeErrorMessage.value = '';
   }
+
+  if (name.value.trim() === '') {
+    submitFailure.value = true;
+    nameError.value = true;
+    nameErrorMessage.value = 'required';
+  } else if (!isValidName(name.value)) {
+    submitFailure.value = true;
+    nameError.value = true;
+    nameErrorMessage.value = 'wrong format';
+  } else {
+    nameError.value = false;
+    nameErrorMessage.value = '';
+  }
+
+  if (phone.value.trim() === '') {
+    submitFailure.value = true;
+    phoneError.value = true;
+    phoneErrorMessage.value = 'required';
+  } else if (!isValidPhone(phone.value)) {
+    submitFailure.value = true;
+    phoneError.value = true;
+    phoneErrorMessage.value = 'wrong format';
+  } else {
+    phoneError.value = false;
+    phoneErrorMessage.value = '';
+  }
+
+  if (consumption.value === '') {
+    submitFailure.value = true;
+    consumptionError.value = true;
+    consumptionErrorMessage.value = 'required';
+  } else if (!isValidConsumption(consumption.value)) {
+    submitFailure.value = true;
+    consumptionError.value = true;
+    consumptionErrorMessage.value = 'wrong format';
+  } else {
+    consumptionError.value = false;
+    consumptionErrorMessage.value = '';
+  }
+
+  if (payment.value.trim() === '') {
+    submitFailure.value = true;
+    paymentError.value = true;
+    paymentErrorMessage.value = 'required';
+  } else {
+    paymentError.value = false;
+    paymentErrorMessage.value = '';
+  }
+
+  if (
+    storeError.value === false &&
+    nameError.value === false &&
+    phoneError.value === false &&
+    consumptionError.value === false &&
+    paymentError.value === false
+  ) {
+    submitFailure.value = false;
+    submitSuccess.value = true;
+  } else {
+    submitFailure.value = true;
+    submitSuccess.value = false;
+  }
+
+  console.log(
+    storeError.value,
+    nameError.value,
+    phoneError.value,
+    consumptionError.value,
+    paymentError.value,
+    submitFailure.value,
+    submitSuccess.value
+  );
 };
 </script>
 
@@ -39,7 +158,9 @@ const submitForm = () => {
     <div class="topic">
       <h1 class="topic first">There is no one</h1>
       <h1 class="topic second">who loves pain</h1>
-      <a role="button" href="#form" class="button">FORM</a>
+      <div class="container">
+        <a role="button" href="#form" class="button">FORM</a>
+      </div>
     </div>
     <div class="paragraph-block">
       <div class="sup-oar">
@@ -107,7 +228,7 @@ const submitForm = () => {
               class="form-input"
               placeholder="placeholder text"
               list="stores"
-              v-model="inputValue"
+              v-model="store"
               required
             />
             <datalist id="stores">
@@ -119,8 +240,9 @@ const submitForm = () => {
                 {{ store }}
               </option>
             </datalist>
-            <div v-if="missingRequired" class="missing-required">required</div>
-            <div v-if="wrongFormat" class="missing-required">wrong format</div>
+            <div v-if="storeError" class="error">
+              {{ storeErrorMessage }}
+            </div>
           </div>
           <div class="form-control">
             <label for="name">name</label>
@@ -130,13 +252,15 @@ const submitForm = () => {
               type="text"
               name="name"
               id="name"
+              v-model="name"
               class="form-input"
               placeholder="placeholder text"
               oninput="value=this.value.replace(/[^\u0041-\u005A\u0061-\u007A\u4E00-\u9FFF\u3105-\u3129\u02CA\u02C7\u02CB\u02D9]/g,'')"
               required
             />
-            <div v-if="missingRequired" class="missing-required">required</div>
-            <div v-if="wrongFormat" class="missing-required">wrong format</div>
+            <div v-if="nameError" class="error">
+              {{ nameErrorMessage }}
+            </div>
           </div>
           <div class="form-control">
             <label for="phone">phone </label>
@@ -145,6 +269,7 @@ const submitForm = () => {
               type="tel"
               name="phone"
               id="phone"
+              v-model="phone"
               class="form-input"
               placeholder="placeholder text"
               pattern="[0]{1}[9]{1}[0-9]{8}"
@@ -152,8 +277,9 @@ const submitForm = () => {
               maxlength="10"
               required
             />
-            <div v-if="missingRequired" class="missing-required">required</div>
-            <div v-if="wrongFormat" class="missing-required">wrong format</div>
+            <div v-if="phoneError" class="error">
+              {{ phoneErrorMessage }}
+            </div>
           </div>
           <div class="form-control">
             <label for="consumption">Amount of consumption </label>
@@ -162,33 +288,68 @@ const submitForm = () => {
               type="number"
               name="consumption"
               id="consumption"
+              v-model="consumption"
               class="form-input"
               placeholder="placeholder text"
               oninput="value=this.value.replace(/\D/g,'')"
               min="0"
               required
             />
-            <div v-if="missingRequired" class="missing-required">required</div>
-            <div v-if="wrongFormat" class="missing-required">wrong format</div>
+            <div v-if="consumptionError" class="error">
+              {{ consumptionErrorMessage }}
+            </div>
           </div>
           <div class="form-control">
             <label for="payment">payment </label>
             <div class="asterisk">*</div>
-            <select name="payment" id="payment" class="form-input" required>
+            <select
+              name="payment"
+              id="payment"
+              v-model="payment"
+              class="form-input"
+              required
+            >
               <option value="digital payment">digital payment</option>
               <option value="atm">ATM</option>
             </select>
-            <div v-if="missingRequired" class="missing-required">required</div>
-            <div v-if="wrongFormat" class="missing-required">wrong format</div>
+            <div v-if="paymentError" class="error">
+              {{ paymentErrorMessage }}
+            </div>
           </div>
         </div>
 
         <div class="container">
+          <div v-if="submitSuccess">
+            <a
+              role="button"
+              id="success"
+              href="#form"
+              @click="submitForm"
+              class="button submit"
+            >
+              <img src="../src/assets/icon/success.svg" class="success icon" />
+              success</a
+            >
+          </div>
+          <div v-if="submitFailure">
+            <a
+              role="button"
+              id="failure"
+              href="#form"
+              @click="submitForm"
+              class="button submit"
+            >
+              <img src="../src/assets/icon/failure.svg" class="failure icon" />
+              failure</a
+            >
+          </div>
+
           <a
             role="button"
-            href="#"
-            @click.prevent="submitForm"
+            href="#form"
+            @click="submitForm"
             class="button submit"
+            v-if="!submitSuccess && !submitFailure"
             >submit</a
           >
         </div>
