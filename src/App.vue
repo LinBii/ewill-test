@@ -71,8 +71,16 @@
               id="store"
               class="form-input"
               placeholder="placeholder text"
+              list="stores"
               required
             />
+            <datalist id="stores">
+              <option value="store1"></option>
+              <option value="store2"></option>
+              <option value="store3"></option>
+              <option value="store4"></option>
+              <option value="store5"></option>
+            </datalist>
           </div>
           <div>
             <label for="name">name</label>
