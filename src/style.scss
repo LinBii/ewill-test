@@ -20,6 +20,12 @@ $secondary-color: #b57556;
   }
 }
 
+@mixin phone {
+  @media (min-width: 414px) {
+    @content;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -326,7 +332,7 @@ label {
     padding: 40px 20px;
     margin: 0 24px;
 
-    max-width: 366px;
+    max-width: 326px;
 
     color: $primary-color;
     background-color: white;
@@ -462,7 +468,7 @@ label {
       display: flex;
       align-content: flex-start;
       flex-flow: row wrap;
-      width: 414px;
+      width: 100vw;
       margin: 18px auto 0 auto;
 
       @include pad {
@@ -472,42 +478,87 @@ label {
 
       .card {
         position: relative;
-        width: 178px;
+        width: 43vw;
         height: 112px;
-        margin: 0 0 41px 16px;
+        margin: 0 0 41px 4vw;
 
         background-color: white;
         box-shadow: 0px 8px 0px #edeef0;
         border-radius: 20px;
 
+        @include phone {
+          width: 178px;
+          margin: 0 0 41px 16px;
+        }
+
+        @include pad {
+          width: 178px;
+          margin: 0 0 41px 16px;
+        }
+
+        @include desktop {
+          width: 178px;
+          margin: 0 0 41px 16px;
+        }
+
         .prize-name {
           position: absolute;
-          width: 11px;
+          width: 2.6vw;
           height: 21px;
-          left: 83px;
+          left: 20vw;
           top: -5px;
 
           color: white;
           z-index: 1;
+
+          @include phone {
+            width: 11px;
+            left: 83px;
+          }
+
+          @include pad {
+            width: 11px;
+            left: 83px;
+          }
+
+          @include desktop {
+            width: 11px;
+            left: 83px;
+          }
         }
 
         .certificateA,
         .certificateD {
           position: absolute;
-          left: 31.46%;
-          right: 31.83%;
+          left: 13.5vw;
+          right: 13.5vw;
           top: -25%;
           bottom: 46.21%;
           z-index: 0;
+
+          @include phone {
+            left: 31.46%;
+            right: 31.83%;
+          }
+
+          @include pad {
+            left: 31.46%;
+            right: 31.83%;
+          }
+
+          @include desktop {
+            left: 31.46%;
+            right: 31.83%;
+          }
         }
 
         .quantity {
           padding: 3px 10px;
 
           position: absolute;
-          width: 25px;
+          width: 6vw;
           height: 17px;
-          left: 125px;
+          left: 30vw;
           top: 18px;
 
           font-size: 12px;
@@ -516,6 +567,21 @@ label {
           background: #fafafa;
           border: 1px solid;
           border-radius: 50px;
+
+          @include phone {
+            width: 25px;
+            left: 125px;
+          }
+
+          @include pad {
+            width: 25px;
+            left: 125px;
+          }
+
+          @include desktop {
+            width: 25px;
+            left: 125px;
+          }
         }
         .prize {
           position: absolute;
