@@ -42,15 +42,12 @@ watch(store, (value) => {
   noResult.value = filteredStores.value.length === 0;
 });
 
-const isValidStore = (storeValue) => {
-  return filteredStores.value.length === 1;
-};
+const isValidStore = () => filteredStores.value.length === 1;
 
 const isValidName = (nameValue) => {
   const pattern =
     /^[\u0041-\u005A\u0061-\u007A\u4E00-\u9FFF\u3105-\u3129\u02CA\u02C7\u02CB\u02D9]+$/;
 
-  console.log(pattern.test(nameValue));
   return pattern.test(nameValue);
 };
 
@@ -140,16 +137,6 @@ const submitForm = () => {
     submitFailure.value = true;
     submitSuccess.value = false;
   }
-
-  console.log(
-    storeError.value,
-    nameError.value,
-    phoneError.value,
-    consumptionError.value,
-    paymentError.value,
-    submitFailure.value,
-    submitSuccess.value
-  );
 };
 </script>
 
